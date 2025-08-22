@@ -4,7 +4,7 @@ import (
 	"math/rand"
 )
 
-func Generate(occurence float32, x, y, n int) [][][]bool {
+func Generate(occurence float64, x, y, n int) [][][]bool {
 	grid := createEmptyGrid(x, y)
 	addRandomCells(grid, occurence)
 	iterations := make([][][]bool, n - 1)
@@ -26,10 +26,10 @@ func createEmptyGrid(x, y int) [][]bool {
 	return arr
 }
 
-func addRandomCells(grid [][]bool, occurence float32) {
+func addRandomCells(grid [][]bool, occurence float64) {
 	for i := range grid {
 		for j := range grid[i] {
-			if randN := rand.Float32(); randN < occurence {
+			if randN := rand.Float64(); randN < occurence {
 				grid[i][j] = true
 			}
 		}
