@@ -4,10 +4,11 @@ import (
 	"fmt"
 )
 
-const defaultX = 1600
-const defaultY = 900
+const defaultX = 90
+const defaultY = 90
 const defaultN = 50
 const defaultOccurence = 0.05
+const scale = 15
 
 func printGrid(grid [][]bool) {
 	for y := range grid {
@@ -24,5 +25,5 @@ func printGrid(grid [][]bool) {
 
 func main() {
 	iterations := Generate(defaultOccurence, defaultX, defaultY, defaultN)
-	SaveAsGif("test.gif", iterations)
+	SaveAsGif("test.gif", iterations, scale)
 }
